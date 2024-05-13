@@ -13,7 +13,7 @@
   /* Font sizes */
   --primary-content-mobile: 1.8rem;
   --primary-content-desktop: 2.3rem;
-  --secondary-content-mobile: 0.9rem;
+  --secondary-content-mobile: 1.3rem;
   --secondary-content-desktop: 1rem;
 
   /* Font weights */
@@ -151,7 +151,9 @@
 }
 
 .pokemon-name {
-  display:block;
+  font-size: var(--secondary-content-mobile);
+  font-family: var(--font-title);
   color: var(--primary-color);
   z-index: 1;
+  font-weight: 700;
 }

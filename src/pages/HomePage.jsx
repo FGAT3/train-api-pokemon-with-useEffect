@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import capitalizeWords from "../scripts/capitalizeWords";
 import noPokemonImg from "../assets/images/pikachu-error.png";
 import { CardGroup, Card, Segment, Header, Image } from "semantic-ui-react";
+import PokemonCard from "../components/PokemonCard";
 
 function HomePage() {
   const [pokemonDetails, setPokemonDetails] = useState([]);
@@ -48,13 +49,22 @@ function HomePage() {
           <h1>Welcome to your pokedex !</h1>
         </Header>
       </Segment>
-      <CardGroup centered itemsPerRow={3}>
+
+      {pokemonDetails.map((pokemon) => (
+        <PokemonCard
+          key={pokemon.id}
+          pokemonImage={pokemon.sprites.front_default}
+          pokemonName={capitalizeWords(pokemon.name)}
+        />
+      ))}
+
+      {/* <CardGroup centered itemsPerRow={3}>
         {pokemonDetails.map((pokemon) => (
           <Card key={pokemon.id}>
             <Image src={pokemon.sprites.front_default} wrapped ui={false} />
           </Card>
         ))}
-      </CardGroup>
+      </CardGroup> */}
 
       {/* <h1>oui oui</h1>
       <h1>svscscdv</h1>

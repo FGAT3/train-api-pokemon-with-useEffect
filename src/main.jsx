@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage.jsx";
 import React from "react";
 import "./styles/App.css";
 import "semantic-ui-css/semantic.min.css";
+import PokemonInfos from "./pages/PokemonInfos.jsx";
 
 const router = createBrowserRouter([
   {
@@ -15,8 +16,8 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        // path: "/",
-        // element: <HomePage />,
+        path: "/pokemon/:pokemonName",
+        element: <PokemonInfos />,
       },
     ],
   },
